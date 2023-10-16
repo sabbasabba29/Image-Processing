@@ -1,0 +1,56 @@
+#load exampleimage1.ppm and call it 'example'
+load test/res/example-darker.ppm example
+
+#brighten example by adding 10
+brighten 10 example example-brighter
+
+#flip example vertically
+vertical-flip example example-vertical
+
+#flip the vertically flipped example horizontally
+horizontal-flip example-vertical example-vertical-horizontal
+
+#create a greyscale using only the value component, as an image example-greyscale
+value-component example example-greyscale
+
+#create a greyscale using other components...
+red-component example aaa
+green-component example bbb
+blue-component example ccc
+intensity-component example ddd
+luma-component examle eee
+
+#save example-brighter
+save test/res/example-brighter-2.ppm example-brighter
+
+#save example-greyscale
+save test/res/example-greyscale-2.ppm example-greyscale
+
+#overwrite exampleimage with another file
+load test/res/example-greyscale.ppm example
+
+#now utilizing new commands from assignment 5
+
+#load example-jpeg.jpeg and call it 'xxx'
+load test/res/example-jpeg.jpeg xxx
+
+#blur xxx and call it 'bxx'
+blur xxx bxx
+
+#sharpen xxx and call it 'sxx'
+sharpen xxx sxx
+
+#greyscale bxx using a color transform and call it 'gbxx'
+greyscale bxx gbxx
+
+#sepia-tone sxx and call it 'psxx'
+sepia sxx psxx
+
+#save gbxx as a png
+save test/res/gbxx-1.png gbxx
+
+#save psxx as a bmp
+save test/res/psxx-1.bmp psxx
+
+#quit
+q
